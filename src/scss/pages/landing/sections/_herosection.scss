@@ -10,8 +10,8 @@
         width: 100%;
         background-image: linear-gradient(
             to right bottom,
-            rgb(249, 247, 201, 0.3),
-            rgb(213, 240, 193, 0.3)
+            rgb(150, 239, 255, 0.8),
+            rgb(95, 189, 255, 0.8)
         );
     }
 
@@ -28,5 +28,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-align: center;
     }
 }

@@ -10,7 +10,9 @@
         display: block;
         font-size: 6rem;
         font-weight: 400;
-        letter-spacing: 3.6rem;
+        letter-spacing: 3.8rem;
+        margin-bottom: 0.6rem;
+        animation: moveRight 0.75s ease-out;
     }
 
     &__text{
@@ -18,5 +20,42 @@
         font-size: 1.5rem;
         font-weight: 400;
         letter-spacing: 9px;
+        margin-bottom: 3.5rem;
+        transform: translateX(-1.1rem);
+        animation: moveLeft 0.75s ease-out;
+    }
+}
+
+@keyframes moveRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80%{
+        opacity: 1;
+        transform: translateX(1rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80%{
+        opacity: 1;
+        transform: translateX(-2rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(-1.1rem);
     }
 }
