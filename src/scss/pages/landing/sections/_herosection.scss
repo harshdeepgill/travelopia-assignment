@@ -1,0 +1,32 @@
+.hero-main{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    &__overlay{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(
+            to right bottom,
+            rgb(249, 247, 201, 0.3),
+            rgb(213, 240, 193, 0.3)
+        );
+    }
+
+    &__image{
+        height: 100%;
+        overflow: hidden;
+        & img{
+            width: 100%;
+        }
+    }
+
+    &__header{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

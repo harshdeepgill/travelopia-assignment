@@ -1,0 +1,22 @@
+.hero-header{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.6rem;
+    }
+
+    &__text{
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 9px;
+    }
+}
