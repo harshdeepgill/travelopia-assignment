@@ -10,10 +10,6 @@ function HeroSection() {
     srcSet="/resources/small-screen-bg.jpg 480w,
             /resources/medium-screen-bg.jpg 768w, 
             /resources/full-screen-bg.jpg 900w"
-    sizes="1200px,
-            (min-width: 480px) 480px,
-            (min-width: 768px) 768px,
-            (min-width: 900px) 900px"
     src="" 
     alt="camping near fire mountains travel" 
 />
