@@ -21,7 +21,7 @@ function HeroSection() {
 
     return ( 
         <div className="hero-main">
-            <Header/>
+            <Header bool={popupState}/>
             <div className={`hero-main__image ${popupState && "hero-blur"}`}>
                 <img
                     srcSet="/resources/small-screen-bg-comp.jpg 480w,
@@ -41,7 +41,7 @@ function HeroSection() {
                 <PopUp dismiser={dismiser}/>
             </div>
             }
-            <Footer/>
+            <Footer bool={popupState}/>
             
         </div>
      );

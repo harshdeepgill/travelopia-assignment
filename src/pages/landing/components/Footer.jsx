@@ -1,6 +1,6 @@
-function Footer() {
+function Footer({bool}) {
     return ( 
-        <div className="footer">
+        <div className={`footer ${bool && "hero-blur"}`} >
             <div className="footer__content">
                 <p>Harshdeep Gill</p>
                 <p>&copy; 2024</p>
