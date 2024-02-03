@@ -2,6 +2,8 @@ import { useState } from "react";
 import Button from "../components/Button";
 import HeroTitle from "../components/HeroTitle";
 import PopUp from "../components/PopUp";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 
 function HeroSection() {
@@ -19,6 +21,7 @@ function HeroSection() {
 
     return ( 
         <div className="hero-main">
+            <Header/>
             <div className={`hero-main__image ${popupState && "hero-blur"}`}>
                 <img
                     srcSet="/resources/small-screen-bg.jpg 480w,
@@ -38,6 +41,7 @@ function HeroSection() {
                 <PopUp dismiser={dismiser}/>
             </div>
             }
+            <Footer/>
             
         </div>
      );

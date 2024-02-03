@@ -1,0 +1,12 @@
+.header{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(48,48,48),
+        rgb(48,48,48, 0.1)
+    );
+}

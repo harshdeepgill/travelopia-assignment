@@ -1,7 +1,7 @@
 .hero-main{
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 100px);
 
     &__overlay{
         position: absolute;
