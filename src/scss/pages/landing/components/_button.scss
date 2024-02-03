@@ -2,14 +2,12 @@
 .button:active{
     text-transform: uppercase;
     text-decoration: none;
-    background-color: #fff;
-    color: #777;
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 50px;
     transition: all 0.2s;
     position: relative;
-    animation: moveButton 0.5s ease-out 0.75s;
+    
 }
 
 .button:hover{
@@ -28,7 +26,6 @@
     height: 100%;
     width: 100%;
     border-radius: 50px;
-    background-color: #fff;
     position: absolute;
     top: 0;
     left: 0;
@@ -51,4 +48,23 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.button-blue{
+    background-color:rgb(95, 189, 255);
+    animation: moveButton 0.5s ease-out;
+    animation-fill-mode: backwards;
+    color: #fff;
+}
+.button-blue::after{
+    background-color:rgb(95, 189, 255);
+}
+.button-white{
+    background-color: #fff;
+    color: #777;
+    animation: moveButton 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+}
+.button-white::after{
+    background-color: #fff;
 }
