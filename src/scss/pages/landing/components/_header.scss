@@ -6,7 +6,27 @@
     left: 0;
     background-image: linear-gradient(
         to bottom,
-        rgb(48,48,48),
-        rgb(48,48,48, 0.1)
+        rgb(8,8,8),
+        rgb(8,8,8, 0.1)
     );
+    display: flex;
+    align-items: center;
+
+    &__content{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #777;
+        font-size: 2rem;
+        z-index: 1;
+
+        &--tee{
+            color: rgb(248, 255, 149);
+        }
+        &--el{
+            color: rgb(166, 255, 150);
+        }
+    }
 }

@@ -24,10 +24,10 @@ function HeroSection() {
             <Header/>
             <div className={`hero-main__image ${popupState && "hero-blur"}`}>
                 <img
-                    srcSet="/resources/small-screen-bg.jpg 480w,
-            /resources/medium-screen-bg.jpg 768w, 
-            /resources/full-screen-bg.jpg 900w"
-                    src=""
+                    srcSet="/resources/small-screen-bg-comp.jpg 480w,
+            /resources/medium-screen-bg-comp.jpg 768w, 
+            /resources/full-screen-bg-comp.jpg 900w"
+                    src="/resources/full-screen-bg-comp.jpg"
                     alt="camping near fire mountains travel"
                 />
             </div>
