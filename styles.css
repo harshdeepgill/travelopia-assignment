@@ -1,0 +1,393 @@
+/* Base Styles  */
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  /* 1rem = 10px, as 10/16x100 = 62.5% */
+  /* As I want to use rem, for easy calculations I've converted 1rem=10px using this code*/
+  font-size: 62.5%;
+}
+body{
+/* To keep control of the heights and widths of the elements*/
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+/* As all the dimensions in the entire project are set with rem, therefore chenging just the size of rem will do most of the work in responsiveness.  */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+/* Hero Section */
+
+.hero-main{
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 100px);
+}
+
+.hero-main__overlay{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(150, 239, 255, 0.8),
+      rgb(95, 189, 255, 0.8)
+  );
+}
+
+.hero-main__image{
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-main__image>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.hero-main__header{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-blur{
+  filter: blur(5px);
+}
+
+/* Header */
+
+.header{
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgb(8,8,8,0.75),
+      rgb(8,8,8, 0.01)
+  );
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.header__content{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.header__content__icon{
+  font-size: 2.5rem;
+}
+
+.header__content--tee{
+  color: rgb(248, 222, 34);
+}
+.header__content--el{
+  color: rgb(166, 255, 150);
+}
+
+/* Title */
+
+.hero-header{
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-header__title{
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.8rem;
+  margin-bottom: 0.6rem;
+  animation: moveRight 0.75s ease-out;
+}
+
+.hero-header__text{
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 9px;
+  margin-bottom: 3.5rem;
+  transform: translateX(-1.1rem);
+  animation: moveLeft 0.75s ease-out;
+}
+
+@keyframes moveRight{
+  0%{
+      opacity: 0;
+      transform: translateX(-10rem);
+  }
+
+  80%{
+      opacity: 1;
+      transform: translateX(1rem);
+  }
+
+  100%{
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes moveLeft{
+  0%{
+      opacity: 0;
+      transform: translateX(10rem);
+  }
+
+  80%{
+      opacity: 1;
+      transform: translateX(-2rem);
+  }
+
+  100%{
+      opacity: 1;
+      transform: translateX(-1.1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-header__title{
+    font-size: 5.1rem;
+    letter-spacing: 3rem;
+}
+
+.hero-header__text{
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+}
+}
+
+@media (max-width: 500px) {
+
+
+.hero-header__title{
+  font-size: 3.7rem;
+  letter-spacing: 2rem;
+}
+
+.hero-header__text{
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  transform: translateX(-0.7rem);
+}
+}
+
+@media (max-width: 385px) {
+  .hero-header__title{
+    font-size: 3.4rem;
+    letter-spacing: 1.6rem;
+}
+
+.hero-header__text{
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    transform: translateX(-0.7rem);
+}
+}
+
+/* Button */
+.button:link,
+.button:active{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 50px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+}
+
+.button:active{
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+.button::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.button:hover::after{
+    transform: scale(1.4) scaleY(1.4);
+    opacity: 0;
+}
+
+@keyframes moveButton {
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-blue{
+    background-color:rgb(95, 189, 255);
+    animation: moveButton 0.5s ease-out;
+    animation-fill-mode: backwards;
+    color: #fff;
+}
+.button-blue::after{
+    background-color:rgb(95, 189, 255);
+}
+.button-white{
+    background-color: #fff;
+    color: #777;
+    animation: moveButton 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+}
+.button-white::after{
+    background-color: #fff;
+}
+
+
+/* Footer */
+.footer{
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.footer__content{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__content>p{
+  font-size: 2rem;
+  color: #777;
+}
+
+@media (max-width: 550px) {
+.footer__content>p{
+  font-size: 1.5rem;
+}
+}
+
+@media (max-width: 400px) {
+  .footer__content>p{
+    font-size: 1rem;
+}
+}
+
+/* Popup */
+
+.popup__hidden{
+  display: none;
+}
+
+.popup-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
+
+.popup{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.popup__modal{
+  width: 30rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  animation: popIn 0.4s ease-out 0.1s;
+  animation-fill-mode: backwards;
+
+
+
+}
+
+.popup__modal__icon{
+  font-size: 5rem;
+  color: limegreen;
+}
+
+.popup__modal__text{
+  font-size: 2rem;
+}
+
+@keyframes popIn {
+  0%{
+      transform: scale(0.01);
+  }
+
+  100%{
+      transform: scale(1);
+  }
+}
+
+/* Some extra functionality */
+.disable-apply{
+  cursor: not-allowed;
+  filter: blur(5px);
+}
